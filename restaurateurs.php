@@ -35,7 +35,11 @@ $connectionInfo = array("UID" => "Administrateur@meet-eat-sv-bdd", "pwd" => "Cor
 $serverName = "tcp:meet-eat-sv-bdd.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-  
+  if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+ 
       ?>
 
         <h1>Espace - Restaurateurs</h1>
