@@ -42,7 +42,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 {
     die(print_r(sqlsrv_errors(), true));
 }  
-      $sql_select = "SELECT * FROM client;";
+      $sql_select = "SELECT * FROM client";
  $stmt = $conn->query($sql_select);
  $registrants = $stmt->fetchAll(); 
  if(count($registrants) > 0) {
