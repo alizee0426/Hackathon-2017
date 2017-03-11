@@ -18,7 +18,7 @@
   <div class="login-page">
     <div class="form">
 
-<?php if (!empty($_POST)) {
+<?php if (empty($_POST)) {
   $var1 = $_POST["username"];
       $var2 = $_POST["password"];
       
