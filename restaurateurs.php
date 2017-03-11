@@ -18,7 +18,8 @@
   <div class="login-page">
     <div class="form">
 
-<?php if (empty($_POST)) {
+<?php 
+      if($_POST["username"] == "abresto") {
   $var1 = $_POST["username"];
       $var2 = $_POST["password"];
       
@@ -29,16 +30,16 @@
       }
    }
       else{
-   ?>
+  
           
-          <h1> Espace - Restaurateurs</h1>
+          echo '<h1> Espace - Restaurateurs</h1>
       <form method="POST" action="restaurateurs.php" class="login-form">
         <input type="text" name="username" placeholder="username"/>
         <input type="password" name="password" placeholder="password"/>
         <button>login</button>
         <p class="message">Pas encore inscrit? <a href="">Crée un compte</a></p>
-      </form>
-<?php } ?>
+      </form>';
+      } ?>
 
     </div>
   </div>
