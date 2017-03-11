@@ -41,7 +41,23 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
   if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
-}   ?>
+}  
+      $sql_select = "SELECT * FROM [dbo].[client]";
+ $stmt = $conn->query($sql_select);
+ $registrants = $stmt->fetchAll(); 
+ if(count($registrants) > 0) {
+     echo "<h2>People who are registered:</h2>";
+     echo "<table>";
+     echo "<tr><th>Name</th>";
+     echo "<th>Email</th>";
+     foreach($registrants as $registrant) {
+         echo "<tr><td>".$registrant['username']."</td>";
+         echo "<td>".$registrant['password']."</td>";
+     }
+      echo "</table>";
+ } else {
+     echo "<h3>No one is currently registered.</h3>";
+ } ?>
           
           <h1> Espace - Restaurateurs</h1>
       <form method="POST" action="restaurateurs.php" class="login-form">
