@@ -20,7 +20,7 @@
       <form method="POST" action="restaurateurs.php" class="login-form">
         <input type="text" name="username" placeholder="username"/>
         <input type="password" name="password" placeholder="password"/>
-        <a href="page04.html"><button>login</button></a>
+        <button><a href="page04.html">login</a></button>
         <p class="message">Pas encore inscrit? <a href="">Crée un compte</a></p>
       </form>
 
