@@ -32,7 +32,7 @@ catch (PDOException $e) {
 }
 
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "Administrateur@meet-eat-sv-bdd", "pwd" => "{Corentin2017}", "Database" => "Meet.Eat.-BDD", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$connectionInfo = array("UID" => "Administrateur@meet-eat-sv-bdd", "pwd" => "Corentin2017", "Database" => "Meet.Eat.-BDD", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:meet-eat-sv-bdd.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
