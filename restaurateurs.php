@@ -19,7 +19,10 @@
     <div class="form">
 
 
-    <?php
+  
+      ?>
+
+        <h1>  <?php
 // PHP Data Objects(PDO) Sample Code:
 try {
     $conn = new PDO("sqlsrv:server = tcp:meet-eat-sv-bdd.database.windows.net,1433; Database = Meet.Eat.-BDD", "Administrateur", "Corentin2017");
@@ -54,10 +57,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
      die(var_dump($e));
  }
  echo "<h3>Your're registered!</h3>";
- }
-      ?>
-
-        <h1>Espace - Restaurateurs</h1>
+ }Espace - Restaurateurs</h1>
       <form method="POST" action="restaurateurs.php" class="login-form">
         <input type="text" name="username" placeholder="username"/>
         <input type="password" name="password" placeholder="password"/>
