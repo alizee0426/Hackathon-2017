@@ -27,5 +27,23 @@
     </div>
   </div>
 
+<?php
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:meet-eat-sv-bdd.database.windows.net,1433; Database = Meet.Eat.-BDD", "Administrateur", "Corentin2017");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "Administrateur@meet-eat-sv-bdd", "pwd" =>
+"Corentin2017", "Database" => "Meet.Eat.-BDD", "LoginTimeout" => 30,
+"Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:meet-eat-sv-bdd.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+?>
 </body>
 </html>
