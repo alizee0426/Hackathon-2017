@@ -44,6 +44,25 @@ $connectionInfo = array("UID" => "Administrateur@meet-eat-sv-bdd", "pwd" =>
 "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:meet-eat-sv-bdd.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
+ 
+  if(!empty($_POST)) {
+ try {
+     $name = $_POST['username'];
+     $email = $_POST['password'];
+
+     // Insert data
+     $sql_insert = "INSERT INTO registration_tbl (username, password) 
+                    VALUES (?,?)";
+     $stmt = $conn->prepare($sql_insert);
+     $stmt->bindValue(1, $name);
+     $stmt->bindValue(2, $email);
+     $stmt->execute();
+ }
+ catch(Exception $e) {    print("Insert errorr.");
+     die(var_dump($e));
+ }
+ echo "<h3>Your're registered!</h3>";
+ }
 ?>
 </body>
 </html>
