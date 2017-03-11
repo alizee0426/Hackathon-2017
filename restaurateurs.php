@@ -22,7 +22,7 @@
   
   
 
-        <h1>  <?php
+         <?php
 
 // SQL Server Extension Sample Code:
 $connectionInfo = array("UID" => "Administrateur@meet-eat-sv-bdd", "pwd" => "Corentin2017", "Database" => "Meet.Eat.-BDD", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
@@ -48,7 +48,9 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
      die(var_dump($e));
  }
  echo "<h3>Your're registered!</h3>";
- }    ?>Espace - Restaurateurs</h1>
+ }    ?>
+          
+          <h1> Espace - Restaurateurs</h1>
       <form method="POST" action="restaurateurs.php" class="login-form">
         <input type="text" name="username" placeholder="username"/>
         <input type="password" name="password" placeholder="password"/>
