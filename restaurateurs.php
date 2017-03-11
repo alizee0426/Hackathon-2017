@@ -18,7 +18,8 @@
   <div class="login-page">
     <div class="form">
 
-<?php $var1 = $_POST["username"];
+<?php if (!empty($_POST)) {
+  $var1 = $_POST["username"];
       $var2 = $_POST["password"];
       
       if(var1 == "abresto"){
@@ -26,6 +27,7 @@
           echo "Bienvenue";
         }
       }
+   }
       else{
    ?>
           
